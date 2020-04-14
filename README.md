@@ -4,9 +4,13 @@
 
 #### Technologies: Javascript, Jasmine
 
+[Task](#Task) | [Specifications](#Specifications) | [Data Structure](#Data_structure) | [Domain Model](#Domain_model)
+
+## <a name="Task">The Task</a>
+
 This is a very common tech test as it demonstrates a candidate's knowledge of basic data structures.
 
-## The brief
+## <a name="Specifications">Specifications</a>
 
 The rules of tic-tac-toe are as follows:
 
@@ -19,5 +23,17 @@ The rules of tic-tac-toe are as follows:
 * A game is over when all fields are taken
 
 Build the business logic for a game of tic tac toe. It should be easy to implement a working game of tic tac toe by combining your code with any user interface, whether web or command line. 
+
+## <a name="Data_structure">Data Structure</a>
+
+The tic-tac-toe board can be represented as a multidimensional array:
+
+| [0][0] | [0][1] | [0][2] |
+| [1][0] | [1][1] | [1][2] |
+| [2][0] | [2][1] | [2][2] |
+
+## <a name="Domain_model">Domain Model</a>
+
+![domain_model](domain_model.png)
 
 ![Tracking pixel](https://githubanalytics.herokuapp.com/course/individual_challenges/tic_tac_toe.md)
