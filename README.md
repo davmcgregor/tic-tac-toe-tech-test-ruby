@@ -29,6 +29,7 @@ Build the business logic for a game of tic tac toe. It should be easy to impleme
 The tic-tac-toe board can be represented as a multidimensional array:
 
 | [0][0] | [0][1] | [0][2] |
+| ------ | ------ | ------ | 
 | [1][0] | [1][1] | [1][2] |
 | [2][0] | [2][1] | [2][2] |
 
