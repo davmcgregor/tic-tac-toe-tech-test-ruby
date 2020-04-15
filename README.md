@@ -1,4 +1,5 @@
 ### [Makers Academy](http://www.makersacademy.com) - Tech test
+[![Build Status](https://travis-ci.com/davmcgregor/tictactoe-tech-test-js.svg?branch=master)](https://travis-ci.com/davmcgregor/tictactoe-tech-test-js)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fc86b910863497a7b5ca/maintainability)](https://codeclimate.com/github/davmcgregor/tictactoe-tech-test-js/maintainability)
 
 # Tic-Tac-Toe ❌⭕
