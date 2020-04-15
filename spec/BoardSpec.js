@@ -20,4 +20,17 @@ describe('Board', function() {
   it('should have the correct grid property', function(){
     expect(board.grid).toEqual(grid);
   })
+
+  describe('#isFree', function(){
+    var board;
+
+    beforeEach(function(){
+      board = new Board();
+    });
+
+    it('should return false if a marker already exists in a cell', function() {
+      board.grid[0][0].push("X");
+      expect(board.isFree([0,0])).toEqual(false);
+    });
+  });
 });

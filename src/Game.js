@@ -9,7 +9,11 @@
 
   Game.prototype = {
     play: function(position){
-      this.board.grid[position[0]][position[1]].push(this.turn.marker);
+      if (this.board.isFree(position)) {
+        this.board.grid[position[0]][position[1]].push(this.turn.marker);
+      } else {
+        throw "Square taken";
+      };
       this.checkWin();
       this.switchPlayer();
     },
