@@ -50,7 +50,7 @@ describe('Game', function() {
       expect(game.board.grid[0][0]).toContain('X');
     })
 
-    it('should return "game over" if the three top cells contain the same marker', function(){
+    it('should return "game over" if the top row cells contain the same marker', function(){
       game.play([0,0]);
       game.play([1,0]);
       game.play([0,1]);
@@ -58,7 +58,7 @@ describe('Game', function() {
       expect(function(){game.play([0,2]);}).toThrow("Game over!");
     })
 
-    it('should return "game over" if the three middle cells contain the same marker', function(){
+    it('should return "game over" if the middle row cells contain the same marker', function(){
       game.play([1,0]);
       game.play([0,0]);
       game.play([1,1]);
@@ -66,10 +66,34 @@ describe('Game', function() {
       expect(function(){game.play([1,2]);}).toThrow("Game over!");
     })
 
-    it('should return "game over" if the three bottom top cells contain the same marker', function(){
+    it('should return "game over" if the bottom row cells contain the same marker', function(){
       game.play([2,0]);
       game.play([0,0]);
       game.play([2,1]);
+      game.play([0,1]);
+      expect(function(){game.play([2,2]);}).toThrow("Game over!");
+    })
+
+    it('should return "game over" if the left column cells contain the same marker', function(){
+      game.play([0,0]);
+      game.play([0,1]);
+      game.play([1,0]);
+      game.play([0,2]);
+      expect(function(){game.play([2,0]);}).toThrow("Game over!");
+    })
+
+    it('should return "game over" if the middle column cells contain the same marker', function(){
+      game.play([0,1]);
+      game.play([0,0]);
+      game.play([1,1]);
+      game.play([0,2]);
+      expect(function(){game.play([2,1]);}).toThrow("Game over!");
+    })
+
+    it('should return "game over" if the right column cells contain the same marker', function(){
+      game.play([0,2]);
+      game.play([0,0]);
+      game.play([1,2]);
       game.play([0,1]);
       expect(function(){game.play([2,2]);}).toThrow("Game over!");
     })

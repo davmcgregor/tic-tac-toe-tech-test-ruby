@@ -24,8 +24,13 @@
 
     checkWin: function(){
       for (i = 0; i < 3; i++) {
-        if (this.compareRow(i) && this.notEmpty(i)) {
+        if (this.compareRow(i) && this.notEmptyRow(i)) {
           throw "Game over!";
+        }
+      }
+      for (i = 0; i < 3; i++) {
+        if (this.compareCol(i) && this.notEmptyCol(i)) {
+          throw "Game over!"
         }
       }
     },
@@ -38,8 +43,16 @@
       return this.compareCells([row_number,0], [row_number,1]) && this.compareCells([row_number,1], [row_number,2]);
     },
 
-    notEmpty: function(row_number){
+    compareCol: function(col_number){
+      return this.compareCells([0, col_number], [1, col_number]) && this.compareCells([1, col_number], [2, col_number]);
+    },
+
+    notEmptyRow: function(row_number){
       return this.board.grid[row_number][0][0] == "X" || this.board.grid[row_number][0][0] == "O";
+    },
+
+    notEmptyCol: function(col_number){
+      return this.board.grid[0][col_number][0] == "X" || this.board.grid[0][col_number][0] == "O";
     }
   }
 
