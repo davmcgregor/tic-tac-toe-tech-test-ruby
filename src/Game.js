@@ -23,15 +23,30 @@
     },
 
     checkWin: function(){
-      if (this.compareCells([0,0], [0,1]) && this.compareCells([0,1], [0,2])) {
+      if (this.compareRow(0) && this.notEmpty(0)) {
+        throw "Game over!";
+      }
+
+      if (this.compareRow(1) && this.notEmpty(1)) {
+        throw "Game over!";
+      }
+
+      if (this.compareRow(2) && this.notEmpty(2)) {
         throw "Game over!";
       }
     },
 
     compareCells: function(cell_one, cell_two){
       return JSON.stringify(this.board.grid[cell_one[0]][cell_one[1]]) == JSON.stringify(this.board.grid[cell_two[0]][cell_two[1]])
-    }
+    },
 
+    compareRow: function(row_number){
+      return this.compareCells([row_number,0], [row_number,1]) && this.compareCells([row_number,1], [row_number,2]);
+    },
+
+    notEmpty: function(row_number){
+      return this.board.grid[row_number][0][0] == "X" || this.board.grid[row_number][0][0] == "O";
+    }
   }
 
   exports.Game = Game;
