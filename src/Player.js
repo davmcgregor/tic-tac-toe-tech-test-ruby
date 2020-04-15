@@ -1,7 +1,7 @@
 (function(exports) {
 
-  function Player() {
-
+  function Player(name) {
+    this.name = name
   }
 
   exports.Player = Player;
