@@ -4,3 +4,5 @@ var playMoves = function(game, one, two, three, four) {
   game.play(three);
   game.play(four);
 };
+
+var Player1 = "Player 1 wins!"

@@ -2,9 +2,13 @@
 
 describe('Game', function() {
   var game
+  var player_one
+  var player_two
 
   beforeEach(function() {
-    game = new Game("Jack", "Jill");
+    player_one = "Jack"
+    player_two = "Jill"
+    game = new Game(player_one, player_two);
   });
 
   it('should be a defined object', function() {
@@ -52,42 +56,42 @@ describe('Game', function() {
 
     it('should return "Player 1 wins!" if the top row cells contain the same marker', function(){
       playMoves(game,[0,0], [1,0], [0,1], [1,1])
-      expect(function(){game.play([0,2]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([0,2]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if the middle row cells contain the same marker', function(){
       playMoves(game, [1,0], [0,0], [1,1], [0,1])
-      expect(function(){game.play([1,2]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([1,2]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if the bottom row cells contain the same marker', function(){
       playMoves(game, [2,0], [0,0], [2,1], [0,1])
-      expect(function(){game.play([2,2]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([2,2]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if the left column cells contain the same marker', function(){
       playMoves(game, [0,0], [0,1], [1,0], [0,2])
-      expect(function(){game.play([2,0]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([2,0]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if the middle column cells contain the same marker', function(){
       playMoves(game, [0,1], [0,0], [1,1], [0,2])
-      expect(function(){game.play([2,1]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([2,1]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if the right column cells contain the same marker', function(){
       playMoves(game, [0,2], [0,0], [1,2], [0,1])
-      expect(function(){game.play([2,2]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([2,2]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if diagonal left to right contain the same marker', function(){
       playMoves(game, [0,0], [0,1], [1,1], [0,2])
-      expect(function(){game.play([2,2]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([2,2]);}).toThrow(Player1);
     })
 
     it('should return "Player 1 wins!" if diagonal right to left contain the same marker', function(){
       playMoves(game, [0,2], [0,0], [1,1], [0,1])
-      expect(function(){game.play([2,0]);}).toThrow("Player 1 wins!");
+      expect(function(){game.play([2,0]);}).toThrow(Player1);
     })
   })
 });
