@@ -17,7 +17,6 @@
       this.checkWin();
       this.switchPlayer();
     },
-
     switchPlayer: function(){
       if(this.turn == this.player_one) {
         this.turn = this.player_two
@@ -25,14 +24,39 @@
         this.turn = this.player_one;
       }
     },
-
     checkWin: function(){
       for (i = 0; i < 3; i++) {
-        if (this.board.winningRow(i) || this.board.winningCol(i) || this.board.winningDiag()) {
-          throw "Game over!";
+        if (this.board.winningRow(i)) {
+          this.rowWinner(i);
+        } else if (this.board.winningCol(i)) {
+          this.colWinner(i);
+        } else if (this.board.winningDiag()) {
+          this.diagWinner();
         }
       }
+    },
+    rowWinner: function(i){
+      if (this.board.grid[i][0][0] == this.player_one.marker) {
+        throw "Player 1 wins!";
+      } else {
+        throw "Player 2 wins!";
+      }
+    },
+    colWinner: function(i){
+      if (this.board.grid[0][i][0] == this.player_one.marker) {
+        throw "Player 1 wins!";
+      } else {
+        throw "Player 2 wins!";
+      }
+    },
+    diagWinner: function(){
+      if (this.board.grid[1][1][0] == this.player_one.marker) {
+        throw "Player 1 wins!";
+      } else {
+        throw "Player 2 wins!";
+      }
     }
+
   };
 
   exports.Game = Game;

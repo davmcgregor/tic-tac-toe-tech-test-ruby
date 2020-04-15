@@ -38,9 +38,7 @@
       return this.grid[1][1][0] == "X" || this.grid[1][1][0] == "O";
     },
     winningDiag: function(){
-      if ((this.compareDiagonalLeftRight() || this.compareDiagonalRightLeft()) && this.notEmptyCentre()) {
-        throw "Game over!";
-      }
+      return ((this.compareDiagonalLeftRight() || this.compareDiagonalRightLeft()) && this.notEmptyCentre())
     }
   };
 
