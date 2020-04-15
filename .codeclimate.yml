@@ -21,11 +21,4 @@ ratings:
   - "**.js"
 exclude_paths:
 - "assets/"
-
-checks:
-  identical-code:
-    config:
-      threshold: 25
-  similar-code:
-    config:
-      threshold: 50
+- "spec/"
