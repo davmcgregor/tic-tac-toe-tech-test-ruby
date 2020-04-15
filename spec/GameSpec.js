@@ -97,5 +97,21 @@ describe('Game', function() {
       game.play([0,1]);
       expect(function(){game.play([2,2]);}).toThrow("Game over!");
     })
+
+    it('should return "game over" if diagonal left to right contain the same marker', function(){
+      game.play([0,0]);
+      game.play([0,1]);
+      game.play([1,1]);
+      game.play([0,2]);
+      expect(function(){game.play([2,2]);}).toThrow("Game over!");
+    })
+
+    it('should return "game over" if diagonal right to left contain the same marker', function(){
+      game.play([0,2]);
+      game.play([0,0]);
+      game.play([1,1]);
+      game.play([0,1]);
+      expect(function(){game.play([2,0]);}).toThrow("Game over!");
+    })
   })
 });
