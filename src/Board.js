@@ -1,7 +1,7 @@
 (function(exports) {
 
   function Board() {
-    this.grid = [ [[X],[X],[X]], [[O],[O],[]], [[],[],[]] ];
+    this.grid = [ [[],[],[]], [[],[],[]], [[],[],[]] ];
   }
 
   exports.Board = Board;

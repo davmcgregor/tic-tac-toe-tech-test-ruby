@@ -23,16 +23,10 @@
     },
 
     checkWin: function(){
-      if (this.compareRow(0) && this.notEmpty(0)) {
-        throw "Game over!";
-      }
-
-      if (this.compareRow(1) && this.notEmpty(1)) {
-        throw "Game over!";
-      }
-
-      if (this.compareRow(2) && this.notEmpty(2)) {
-        throw "Game over!";
+      for (i = 0; i < 3; i++) {
+        if (this.compareRow(i) && this.notEmpty(i)) {
+          throw "Game over!";
+        }
       }
     },
 
