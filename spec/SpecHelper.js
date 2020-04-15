@@ -1,10 +1,3 @@
-var playMoves = function(game, one, two, three, four) {
-  game.play(one);
-  game.play(two);
-  game.play(three);
-  game.play(four);
-};
-
 var round1 = function(game, Player1First, Player2First){
   game.play(Player1First);
   game.play(Player2First);

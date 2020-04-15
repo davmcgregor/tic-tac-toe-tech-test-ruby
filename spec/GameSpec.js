@@ -61,37 +61,44 @@ describe('Game', function() {
     })
 
     it('should return "Player 1 wins!" if the middle row cells contain the same marker', function(){
-      playMoves(game, [1,0], [0,0], [1,1], [0,1])
+      round1(game, [1,0], [0,0])
+      round2(game, [1,1], [0,1])
       expect(function(){game.play([1,2]);}).toThrow("Player 1 wins!");
     })
 
     it('should return "Player 1 wins!" if the bottom row cells contain the same marker', function(){
-      playMoves(game, [2,0], [0,0], [2,1], [0,1])
+      round1(game, [2,0], [0,0])
+      round2(game, [2,1], [0,1])
       expect(function(){game.play([2,2]);}).toThrow("Player 1 wins!");
     })
 
     it('should return "Player 1 wins!" if the left column cells contain the same marker', function(){
-      playMoves(game, [0,0], [0,1], [1,0], [0,2])
+      round1(game, [0,0], [0,1])
+      round2(game, [1,0], [0,2])
       expect(function(){game.play([2,0]);}).toThrow("Player 1 wins!");
     })
 
     it('should return "Player 1 wins!" if the middle column cells contain the same marker', function(){
-      playMoves(game, [0,1], [0,0], [1,1], [0,2])
+      round1(game, [0,1], [0,0])
+      round2(game, [1,1], [0,2])
       expect(function(){game.play([2,1]);}).toThrow("Player 1 wins!");
     })
 
     it('should return "Player 1 wins!" if the right column cells contain the same marker', function(){
-      playMoves(game, [0,2], [0,0], [1,2], [0,1])
+      round1(game, [0,2], [0,0])
+      round2(game, [1,2], [0,1])
       expect(function(){game.play([2,2]);}).toThrow("Player 1 wins!");
     })
 
     it('should return "Player 1 wins!" if diagonal left to right contain the same marker', function(){
-      playMoves(game, [0,0], [0,1], [1,1], [0,2])
+      round1(game, [0,0], [0,1])
+      round2(game, [1,1], [0,2])
       expect(function(){game.play([2,2]);}).toThrow("Player 1 wins!");
     })
 
     it('should return "Player 1 wins!" if diagonal right to left contain the same marker', function(){
-      playMoves(game, [0,2], [0,0], [1,1], [0,1])
+      round1(game, [0,2], [0,0])
+      round2(game, [1,1], [0,1])
       expect(function(){game.play([2,0]);}).toThrow("Player 1 wins!");
     })
   })
