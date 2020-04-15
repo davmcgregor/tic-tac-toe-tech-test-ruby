@@ -27,4 +27,27 @@ describe('Game', function() {
   it('should start with the correct turn property', function(){
     expect(game.turn).toEqual(game.player_one);
   })
+
+  describe ('#play', function(){
+
+    var game;
+    var player_one;
+    var player_two;
+
+    beforeEach(function(){
+      player_one = new Player("Jack", "X")
+      player_two = new Player("Jill", "O")
+      game = new Game(player_one, player_two);
+    })
+
+    it('should change the turn property', function(){
+      game.play([0,1]);
+      expect(game.turn).toEqual(game.player_two);
+    })
+
+    it('should add a move to the grid', function(){
+      game.play([0,1]);
+      expect(game.board.grid[0][1]).toContain('X');
+    })
+  })
 });
