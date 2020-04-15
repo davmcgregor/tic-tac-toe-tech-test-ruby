@@ -8,7 +8,10 @@
       return this.grid[position[0]][position[1]].length === 0;
     },
     compareCells: function(cell_one, cell_two, cell_three){
-      return (JSON.stringify(this.grid[cell_one[0]][cell_one[1]]) === JSON.stringify(this.grid[cell_two[0]][cell_two[1]])) && (JSON.stringify(this.grid[cell_two[0]][cell_two[1]]) === JSON.stringify(this.grid[cell_three[0]][cell_three[1]]))
+      move_one = JSON.stringify(this.grid[cell_one[0]][cell_one[1]]);
+      move_two = JSON.stringify(this.grid[cell_two[0]][cell_two[1]]);
+      move_three = JSON.stringify(this.grid[cell_three[0]][cell_three[1]]);
+      return ((move_one === move_two) && (move_two === move_three));
     },
     compareRow: function(row_number){
       return this.compareCells([row_number,0], [row_number,1], [row_number,2]);
