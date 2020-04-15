@@ -41,13 +41,21 @@ describe('Game', function() {
     })
 
     it('should change the turn property', function(){
-      game.play([0,1]);
+      game.play([0,0]);
       expect(game.turn).toEqual(game.player_two);
     })
 
     it('should add a move to the grid', function(){
+      game.play([0,0]);
+      expect(game.board.grid[0][0]).toContain('X');
+    })
+
+    it('should return "game over" if the three top cells contain the same marker', function(){
+      game.play([0,0]);
+      game.play([1,0]);
       game.play([0,1]);
-      expect(game.board.grid[0][1]).toContain('X');
+      game.play([1,1]);
+      expect(function(){game.play([0,2]);}).toThrow("Game over!");
     })
   })
 });
