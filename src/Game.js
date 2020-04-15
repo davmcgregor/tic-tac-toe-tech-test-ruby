@@ -4,6 +4,7 @@
     this.board = board;
     this.player_one = player_one;
     this.player_two = player_two;
+    this.turn = player_one;
 
   }
 

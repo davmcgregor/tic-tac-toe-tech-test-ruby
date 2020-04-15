@@ -19,4 +19,12 @@ describe('Game', function() {
     expect(game.player_one).toBeDefined();
     expect(game.player_two).toBeDefined();
   })
+
+  it('should have a turn property to indicate current player', function(){
+    expect(game.turn).toBeDefined();
+  })
+
+  it('should start with the correct turn property', function(){
+    expect(game.turn).toEqual(game.player_one);
+  })
 });
